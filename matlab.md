@@ -1,15 +1,15 @@
 # MATLAB Programming Notes
 
-# Matlab
+## Matlab
 
-## Logspace vector
+### Logspace vector
 
     logspace(a,b)
 
 where the range is [10^a,10^b]. It creates 50 points. If you want more, add another
 argument n with n the number of points you want.
 
-## Fill area
+### Fill area
 
 With the fill command, you can fill a polygon enclosed by the vector
 
@@ -24,14 +24,31 @@ C determines the color. To get some shading use
 
 This makes the filling more transparent and you don't need to deal with RGB codes.
 
-## Finding index of element
+### Finding index of element
 
     idx = find(a == 2)
 
 This returns the index of the element of a which equals 2. So for a = [1 2 3], the
 answer would be 2.
 
-# Simulink
+### GUI Design
+
+- List directory content in Listbox
+
+            filePattern = fullfile('03_simulation\','*.slx');
+            simModels = dir(filePattern);
+            simList = {simModels(~[simModels.isdir]).name};
+            app.ChooseModelListBox.Items = simList;
+  
+  This lists all \*.slx files in the 03\_simulation directory in the ListBox.
+  'dir' returs the directory content based on the 'filePattern' and 'simList'
+  contains only the names of the files in an array to be used as items.
+
+## Simulink
 
 - call Simulink from the matlab command line: 
+        sim('model.slx')
 
+- Simulink Debugger: *Debug* -> *Breakpoints List* -> *Debug Model*. Then start
+  the debugger in the GUI. Afterwards you can use the debugging commands in the
+  MATLAB command window.

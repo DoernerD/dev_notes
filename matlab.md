@@ -44,6 +44,26 @@ answer would be 2.
   'dir' returs the directory content based on the 'filePattern' and 'simList'
   contains only the names of the files in an array to be used as items.
 
+### Resample Simulation Data
+
+To resample a timeseries y to a different time vector tnew use
+
+    yResample = resample(y,tnew)
+
+yResample is the new timeseries.
+
+
+### Using one entry of a symbolic vector
+
+When using the cross product, you obviously get a vector in return. Now, in
+order to only use one entry, you can't use cp(2), as cp is the symbolic vector.
+The easiest way is to use
+
+    cp2 = cp'*[0; 1; 0];
+
+cp2 is the desired scalar function.
+
+
 ## Simulink
 
 - call Simulink from the matlab command line: 

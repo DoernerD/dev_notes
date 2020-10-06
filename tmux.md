@@ -17,3 +17,18 @@ Swaps window 3 with window 1
     C-a ,
     
 This allows you to rename a pane.
+
+## List Sessions
+
+    tmux ls
+
+lists all current sessions.
+
+## Attach to Session
+
+    tmux a 
+    tmux a -t <session_name>
+
+If you got kicked out of the terminal or accidentially closed it, you can attach
+to the current session again with this command.
+

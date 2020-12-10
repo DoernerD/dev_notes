@@ -72,3 +72,25 @@ cp2 is the desired scalar function.
 - Simulink Debugger: *Debug* -> *Breakpoints List* -> *Debug Model*. Then start
   the debugger in the GUI. Afterwards you can use the debugging commands in the
   MATLAB command window.
+
+
+## Stateflow
+
+In Stateflow you can define various signals, events and so on. To get an
+overview over all signals and define them you have two options (up to MATLAB
+2019a).
+
+1.) *Model Explorer*, then navigate to the chart and have them there.
+2.) *View* -> *Symbols*, then you get the panel on the side.
+
+
+## Algebraic Loops
+
+Simulink has various ways to solve algebraic loops, either based on a *Trust
+Region* or *Line Search* algorithm. There can be cases, where one or the other
+fails. To set them manually, use
+
+   set\_param(*modelName*,'AlgebraicLoopSolver','LineSearch');
+
+This can help if the simulation doesn't converge because of algebraic loops (and
+you can't solve them otherwise).

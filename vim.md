@@ -46,3 +46,9 @@ To move backward to the beginning of a word, use
     b
     
 
+## Colorschemes
+
+To change color schemes temporarily, use
+
+    :colorscheme <schemeName>
+
